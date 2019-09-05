@@ -8,7 +8,7 @@ resize-js <filename|glob> [width:number]
 ```
 ### Example
 ```bash
-resize-js ./*.jpg 300 # this will find all of the images with JPG format, resize them (width: 300 px height: auto) 
+resize-js ./*.jpg 300 # this will find all the JPG images, resize them (width: 300 px height: auto) 
                       # and store them alongside with existing ones (resized_<original_file_name.jpg>)
 ```
 
