@@ -1,0 +1,42 @@
+{
+  "name": "resize-js",
+  "version": "0.0.1",
+  "description": "Powerful tool for resizing pictures",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "npm publish",
+    "test": "jest",
+    "build": "copyfiles ./index.js dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edward93/resize-js.git"
+  },
+  "keywords": [
+    "sharp",
+    "resize",
+    "images"
+  ],
+  "author": "Edward Chopuryan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edward93/resize-js/issues"
+  },
+  "homepage": "https://github.com/edward93/resize-js#readme",
+  "dependencies": {
+    "glob": "^7.1.4",
+    "path": "^0.12.7",
+    "sharp": "^0.23.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "copyfiles": "^2.1.1",
+    "jest": "^24.9.0",
+    "jest-environment-jsdom-fourteen": "^0.1.0",
+    "jest-watch-typeahead": "^0.4.0"
+  }
+}

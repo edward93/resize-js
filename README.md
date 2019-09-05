@@ -1,2 +1,6 @@
 # resize-js
-Powerful tool for resizing pictures
+## Powerful yet simple images resize tool
+
+## Usage
+
+## Limitations
