@@ -2,7 +2,10 @@
   "name": "resize-js",
   "version": "0.0.1",
   "description": "Powerful tool for resizing pictures",
-  "main": "dist/index.js",
+  "main": "index.js",
+  "bin": {
+    "resize-js": "./dist/index.js"
+  },
   "files": [
     "dist/**/*"
   ],
