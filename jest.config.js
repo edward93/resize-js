@@ -1,6 +1,6 @@
 module.exports = {
   coverageReporters: ["json", "html"],
-  collectCoverageFrom: ["index.js"],
+  collectCoverageFrom: ["lib/resize.js"],
   testMatch: ["<rootDir>/tests/**/*{spec,test}.{js,jsx,ts,tsx}"],
   testEnvironment: "jest-environment-jsdom-fourteen",
   transform: {

@@ -13,6 +13,7 @@
     "predeploy": "npm run build",
     "deploy": "npm publish",
     "test": "jest",
+    "test-c": "jest --coverage",
     "build": "copyfiles ./index.js dist"
   },
   "repository": {
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",
+    "babel-preset-react-app": "^9.0.1",
     "copyfiles": "^2.1.1",
     "jest": "^24.9.0",
     "jest-environment-jsdom-fourteen": "^0.1.0",
