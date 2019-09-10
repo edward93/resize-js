@@ -1,6 +1,6 @@
 {
   "name": "resize-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Powerful tool for resizing pictures",
   "main": "./dist/lib/resize.js",
   "bin": {

@@ -16,7 +16,7 @@ if (process.argv[2]) {
         console.error("No files found");
         return 1;
       }
-      resizeImgs(files, width);
+      resizeImgs.resize(files, width);
     }
   });
 } else {
