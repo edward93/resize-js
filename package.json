@@ -14,7 +14,7 @@
     "deploy": "npm publish",
     "test": "jest",
     "test-c": "jest --coverage",
-    "build": "copyfiles ./index.js dist && copyfiles lib/**/* dist/lib"
+    "build": "copyfiles ./index.js dist && copyfiles lib/**/* dist/"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,10 @@
 ## Powerful yet simple images resize tool
 *NOTE:* This tool uses `sharp` for image manipulation. More info [here](https://github.com/lovell/sharp)
 
+## Install
+```bash
+npm i -g resize-js
+```
 ## Usage
 ```bash
 resize-js <filename|glob> [width:number]
