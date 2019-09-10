@@ -4,6 +4,8 @@ const sharp = require("sharp");
 const glob = require("glob");
 const path = require("path");
 
+const resizeImgs = require("./lib/resize");
+
 const width = +process.argv[3] || 400;
 
 if (process.argv[2]) {
@@ -16,17 +18,7 @@ if (process.argv[2]) {
         console.error("No files found");
         return 1;
       }
-      files.map(file => {
-        sharp(file)
-          .resize({ width })
-          .toFile(
-            `${path.dirname(file)}/resized-${path.basename(file)}`,
-            (err, info) => {
-              if (err) console.error(err);
-              if (info) console.log(info);
-            }
-          );
-      });
+      resizeImgs(files, width);
     }
   });
 } else {

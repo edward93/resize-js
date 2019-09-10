@@ -2,7 +2,7 @@
   "name": "resize-js",
   "version": "0.0.1",
   "description": "Powerful tool for resizing pictures",
-  "main": "index.js",
+  "main": "./dist/lib/resize.js",
   "bin": {
     "resize-js": "./dist/index.js"
   },
@@ -10,11 +10,11 @@
     "dist/**/*"
   ],
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run test && npm run build",
     "deploy": "npm publish",
     "test": "jest",
     "test-c": "jest --coverage",
-    "build": "copyfiles ./index.js dist"
+    "build": "copyfiles ./index.js dist && copyfiles lib/**/* dist/lib"
   },
   "repository": {
     "type": "git",
