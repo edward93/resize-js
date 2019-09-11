@@ -1,6 +1,6 @@
 {
-  "name": "resize-js",
-  "version": "0.1.0",
+  "name": "@edward1993/resize-js",
+  "version": "0.1.1",
   "description": "Powerful tool for resizing pictures",
   "main": "./dist/lib/resize.js",
   "bin": {
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "predeploy": "npm run test && npm run build",
-    "deploy": "npm publish",
+    "deploy": "npm publish --access=public",
     "test": "jest",
     "test-c": "jest --coverage",
     "build": "copyfiles ./index.js dist && copyfiles lib/**/* dist/"

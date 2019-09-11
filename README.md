@@ -4,7 +4,7 @@
 
 ## Install
 ```bash
-npm i -g resize-js
+npm i -g @edward1993/resize-js
 ```
 ## Usage
 ```bash
