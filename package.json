@@ -1,6 +1,6 @@
 {
   "name": "@edward1993/resize-js",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Powerful tool for resizing images",
   "main": "./dist/lib/resize.js",
   "bin": {
