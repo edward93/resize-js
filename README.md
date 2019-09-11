@@ -1,5 +1,6 @@
 # resize-js
-## Powerful yet simple images resize tool
+![npm (scoped)](https://img.shields.io/npm/v/@edward1993/resize-js?style=flat-square)
+## Powerful yet simple image resize tool
 *NOTE:* This tool uses `sharp` for image manipulation. More info [here](https://github.com/lovell/sharp)
 
 ## Install
