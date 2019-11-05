@@ -2,13 +2,15 @@ import { resize } from "../lib/resize.js";
 
 const mockToFileCallback = jest.fn();
 const mockToFile = jest.fn();
+const mockGrayscale = jest.fn();
 
 jest.mock("sharp", () => () => ({
   resize: jest.fn().mockImplementation(() => ({
     // toFile: jest.fn().mockImplementation((outDir, mockToFileCallback) => {
     //   mockToFileCallback(false, {});
     // })
-    toFile: mockToFile
+    toFile: mockToFile,
+    grayscale: mockGrayscale
   }))
 }));
 
@@ -65,5 +67,19 @@ describe("Resize", () => {
 
     expect(console.error).toHaveBeenCalledTimes(1);
     expect(console.info).toHaveBeenCalledTimes(0);
+  });
+
+  it("Grayscale is called when 3rd argument is true", () => {
+    mockGrayscale.mockImplementation(() => ({ toFile: mockToFile }));
+
+    mockToFile.mockImplementation((outDir, mockToFileCallback) => {
+      mockToFileCallback(false, {});
+    });
+
+    const result = resize(["file"], 100, true);
+    expect(console.error).toHaveBeenCalledTimes(0);
+    expect(console.info).toHaveBeenCalledTimes(1);
+    expect(mockToFile).toHaveBeenCalledTimes(1);
+    expect(mockGrayscale).toHaveBeenCalledTimes(1);
   });
 });
