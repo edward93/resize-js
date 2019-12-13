@@ -1,24 +1,46 @@
 #!/usr/bin/env node
+const argv = require("yargs")
+  .usage("Usage: resize-js [options]")
+  .example("resize-js -f ./img.png -w 25 -g")
+  .option("file", {
+    alias: "f",
+    describe: "file or glob",
+    demandOption: true,
+    type: "string"
+  })
+  .option("width", {
+    alias: "w",
+    describe: "width of the output image in pixels",
+    demandOption: false,
+    default: 400,
+    type: "number"
+  })
+  .option("grayscale", {
+    alias: "g",
+    describe: "Convert to grayscale",
+    demandOption: false,
+    default: false,
+    type: "boolean"
+  })
+  .help("h")
+  .alias("h", "help")
+  .epilog(`Copyright ${new Date().getFullYear()}`).argv;
 
 const glob = require("glob");
 
-const resizeImgs = require("./lib/resize");
+const resizeImages = require("./lib/resize");
 
-const width = +process.argv[3] || 400;
+const width = +argv.width || 400;
 
-if (process.argv[2]) {
-  glob(process.argv[2], (err, files) => {
-    if (err) {
-      console.error(err);
-      return;
-    } else {
-      if (files.length === 0) {
-        console.error("No files found");
-        return 1;
-      }
-      resizeImgs.resize(files, width, process.argv[4]);
+glob(argv.file, (err, files) => {
+  if (err) {
+    console.error(err);
+    return 1;
+  } else {
+    if (files.length === 0) {
+      console.error("No files found");
+      return 1;
     }
-  });
-} else {
-  console.error("Please specify a filename/glob");
-}
+    return resizeImages.resize(files, width, argv.grayscale);
+  }
+});
