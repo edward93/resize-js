@@ -11,7 +11,9 @@ jest.mock("sharp", () => () => ({
     // })
     toFile: mockToFile,
     grayscale: mockGrayscale
-  }))
+  })),
+  toFile: mockToFile,
+  grayscale: mockGrayscale
 }));
 
 jest.mock("path");
@@ -46,6 +48,25 @@ describe("Resize", () => {
     const result = resize(["file"], 0);
     expect(result).toBe(false);
     expect(console.error).toHaveBeenCalledTimes(1);
+  });
+
+  it("Throws an error if 'width' is undefined and 'grayscale' is false", () => {
+    const result = resize(["file"], undefined, false);
+    expect(result).toBe(false);
+    expect(console.error).toHaveBeenCalledTimes(1);
+  });
+
+  it("Doesn't throw an error if 'width' is undefined but 'grayscale' is true", () => {
+    mockGrayscale.mockImplementation(() => ({ toFile: mockToFile }));
+
+    mockToFile.mockImplementation((outDir, mockToFileCallback) => {
+      mockToFileCallback(false, {});
+    });
+
+    const result = resize(["file"], undefined, true);
+
+    expect(console.error).toHaveBeenCalledTimes(0);
+    expect(console.info).toHaveBeenCalledTimes(1);
   });
 
   it("Doesn't throw any error if 'files' and 'width' are valid", () => {
