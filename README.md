@@ -9,8 +9,8 @@ _NOTE:_ This tool uses `sharp` for image manipulation. More info [here](https://
 
 ## Announcements
 
-New `v1.1.0` version is here. Check out the [Release Notes](./docs/releaseNotes.md).  
-*With this new release it is possible specify 'grayscale' argument only skipping 'width'.*  
+New `v1.1.0` version is here. Check out the [Release Notes](./docs/releaseNotes.md).\
+*With this new release it is possible specify 'grayscale' argument only skipping 'width'.*\
 *New output parameter is added which allows you to specify where to save your "modified" images.*
 
 ## Install
