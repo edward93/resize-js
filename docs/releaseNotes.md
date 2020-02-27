@@ -1,8 +1,12 @@
 # Resize JS
 
+## v1.1.0
+- Makes 'width' optional
+- Adds 'output' argument
+
 ## v1.0.0
-- Added 'yargs'
-- Updated documentations
+- Adds 'yargs'
+- Updates documentations
 
 ## v0.1.0 - v0.3.0 (pre releases)
 **This is an old release consider upgrading to latest stable**

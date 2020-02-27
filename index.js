@@ -12,7 +12,7 @@ const argv = require("yargs")
     alias: "w",
     describe: "width of the output image in pixels",
     demandOption: false,
-    default: 400,
+    default: undefined,
     type: "number"
   })
   .option("grayscale", {
@@ -22,6 +22,13 @@ const argv = require("yargs")
     default: false,
     type: "boolean"
   })
+  .option("output", {
+    alias: "o",
+    describe: "Output folder",
+    demandOption: false,
+    default: ".",
+    type: "string"
+  })
   .help("h")
   .alias("h", "help")
   .epilog(`Copyright ${new Date().getFullYear()}`).argv;
@@ -29,8 +36,6 @@ const argv = require("yargs")
 const glob = require("glob");
 
 const resizeImages = require("./lib/resize");
-
-const width = +argv.width || 400;
 
 glob(argv.file, (err, files) => {
   if (err) {
@@ -41,6 +46,6 @@ glob(argv.file, (err, files) => {
       console.error("No files found");
       return 1;
     }
-    return resizeImages.resize(files, width, argv.grayscale);
+    return resizeImages.resize(files, argv.width, argv.grayscale, argv.output);
   }
 });
