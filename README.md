@@ -34,6 +34,7 @@ Options:
 
 Examples:
   resize-js -f ./img.png -w 25 -g
+  resize-js -f ./img.png -g -o ./test # will create ./test folder if it doesn't exist
 
 Copyright 2020
 ```
